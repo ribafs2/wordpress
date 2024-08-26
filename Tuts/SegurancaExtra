@@ -1,0 +1,28 @@
+
+Caso não esteja usando desabilite o editor pelo wp-config.php com o código:
+define('DISALLOW_FILE_EDIT',true); 
+
+Previna a pesquisa de diretórios via .htaccess com o código: Options All -Indexes (O Nginx já faz isso)
+      
+Hide the WordPress Version
+Revealing the WordPress version can provide hackers with valuable information to search for security loopholes.
+Instructions:
+    • Add the following line to your theme’s functions.php file: 
+remove_action('wp_head', 'wp_generator');
+
+    • Open the wp-config.php file 
+    • Search Unique Keys for Authentication and Salts. This section should be right after the database credentials unless you have moved this information to your wp-config.php file. 
+    • Specify a random value of more than 60 unique characters for each key and for salting instead of putting your unique phrase here. You can also use the Online Security Key Generator for automatic key generation. 
+    • If you are using the online security key generator, simply copy the entire block of code and replace the eight default values in your wp-config.php file. 
+    • Save the wp-config.php file. 
+
+                • Create user roles on WordPress
+User roles have been integrated on WordPress since version 2.0. Most users do not even know that they exist and assign administrator rights to everyone who has access to their dashboard (obviously this is not a good thing for a lot of reasons). By default, WordPress comes with 6 user roles:
+Super Administrator: The Super Administrator is one with the highest level of access to WordPress and is only available on a multi-site network. It looks like an administrator but has more power than a normal administrator.
+Administrator: someone who has access to all administrative functions and functions within a site.
+Editor: someone who can publish and manage the articles of all users, including his own.
+Author: someone who can publish and manage his own articles.
+Contributor: someone who can write and manage their own messages but cannot publish them.
+Subscriber: someone who can only manage his profile and read the published articles.
+Also Read – How to  Log User Activity in WordPress? [2024] GUIDE
+

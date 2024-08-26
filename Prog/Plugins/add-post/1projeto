@@ -1,0 +1,19 @@
+Este plugin adiciona uma mensagem a todos os posts
+
+/*
+
+*/
+
+function mensagem_post( $msg ){
+	$mensagem = "<h3>Esta mensagem aparecerá no início de cada post</h3>";
+	$retorno = $mensagem . $msg;
+	return $retorno;
+}
+
+add_filter( 'the_content', 'mensagem_post' );
+
+Abrir a administração do site
+Ativar o nosso plugin
+Verificar no site, em cada post
+Caso desative as mensagens não mais aparecerão
+
